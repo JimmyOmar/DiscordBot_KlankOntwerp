@@ -3,7 +3,7 @@
 
 ### Project Makerskills 2C
 
-                                                                                                                                         _Mick Broer &amp; Jimmy van der Heijden_
+_Mick Broer &amp; Jimmy van der Heijden_
 
 **Voorwoord**
 
