@@ -30,29 +30,35 @@ Would: Voice cloning.
 Hieronder zullen wij het creeëren en functioneren van de bot binnen Discord uitleggen.
 
 Daar komt bij kijken:
+
 - Registreren
 - Deelname aan een server
 - Verbinding maken met Discord
 
 Wat je nodig zult hebben:
+
 - Python
 - Text editor
 - Discord account
 
 
 **Discord package installeren**
+
 Voordat we beginnen moeten de Discord package voor python installeren met het command:
 
 
 #### Linux/macOS
+
 python3 -m pip install -U discord.py
 
 
 #### Windows
+
 py -3 -m pip install -U discord.py
 
 
 **Registreren**
+
 Om te beginnen moeten we naar het Discord&#39;s Developer Portal. Voor toegang heb je een al bestaand Discord account nodig of moet je er één aanmaken.
 
 [https://discord.com/developers/docs/intro](https://discord.com/developers/docs/intro)
@@ -75,6 +81,7 @@ De bot neemt vanzelf de naam aan die je aan de applicatie hebt gegeven. Dit kan 
 
 
 **Deelname aan server**
+
 Een bot kan geen uitnodigingen accepteren zoals een normale gebruiker dat wel kan. In plaats daarvan voeg je je bot toe met behulp van het OAuth2-protocol.
 
 ![image3](https://user-images.githubusercontent.com/65659487/112617659-87e81480-8e25-11eb-916f-9675c99f0597.png)
@@ -95,6 +102,7 @@ Open de Discord applicatie en je zult zien dat de bot heeft deelgenomen aan je s
 
 
 **Verbinding maken met Discord**
+
 Er zal in dit verslag niet te diep ingegaan worden op de programmeertaal Python zelf meer eerder op de geschreven functies: wat ze doen en hoe ze te gebruiken etc.
 
 Nu dat de bot zich bevindt in de gewenste server moeten we de bot &#39;online&#39; krijgen. Met discord.py doe je dit door een instantie van Client in een text-editor te maken:
@@ -127,6 +135,7 @@ Open Discord, je zult zien dat de bot nu online is!
 
 
 **Discord Bot interactie met externe programma&#39;s**
+
 Voor de interactie met andere programma&#39;s gebruiken we Open Sound Control. Om met OSC te werken in Python, moet je eerst via pip een library installeren:
 
 $ pip install python-osc
@@ -185,6 +194,7 @@ Veel plezier met OSC en Discord ;)
 
 
 #### Bronnen:
+
 Lucas (2020.) _Python: Making a Discord Bot (Rewrite / v1.x)_
 
 Geraadpleegd van:
