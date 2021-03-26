@@ -1,7 +1,7 @@
 #
 # **Interactief Discord Klankwereld**
 
-# Project Makerskills 2C
+### Project Makerskills 2C
 
 _Mick Broer &amp; Jimmy van der Heijden_
 
