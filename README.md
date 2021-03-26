@@ -13,6 +13,7 @@ Het programmeerwerk is gedaan in Python waarbij de bot wordt aangeroepen in Disc
 
 Je kan het eindresultaat hier bekijken: [https://youtu.be/KSu6qIBJ8QQ](https://youtu.be/KSu6qIBJ8QQ)
 
+
 **MoSCoW**
 
 Must: Discord Interactie via OSC.
@@ -23,6 +24,7 @@ Could: Bot stand-alone maken.
 
 Would: Voice cloning.
 
+
 **Discord functionaliteit**
 
 Hieronder zullen wij het creeëren en functioneren van de bot binnen Discord uitleggen.
@@ -30,7 +32,6 @@ Hieronder zullen wij het creeëren en functioneren van de bot binnen Discord uit
 Daar komt bij kijken:
 
 - Registreren
-
 - Deelname aan een server
 - Verbinding maken met Discord
 
@@ -40,15 +41,16 @@ Wat je nodig zult hebben:
 - Text editor
 - Discord account
 
+
 **Discord package installeren**
 
 Voordat we beginnen moeten de Discord package voor python installeren met het command:
 
-# Linux/macOS
+#### Linux/macOS
 
 python3 -m pip install -U discord.py
 
-# Windows
+#### Windows
 
 py -3 -m pip install -U discord.py
 
@@ -184,7 +186,8 @@ msg[1].postln;
 
 Veel plezier met OSC en Discord ;)
 
-Bronnen:
+
+#### Bronnen:
 
 Lucas (2020.) _Python: Making a Discord Bot (Rewrite / v1.x)_
 
