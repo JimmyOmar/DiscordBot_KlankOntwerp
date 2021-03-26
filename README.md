@@ -30,32 +30,29 @@ Would: Voice cloning.
 Hieronder zullen wij het creeëren en functioneren van de bot binnen Discord uitleggen.
 
 Daar komt bij kijken:
-
 - Registreren
 - Deelname aan een server
 - Verbinding maken met Discord
 
 Wat je nodig zult hebben:
-
 - Python
 - Text editor
 - Discord account
 
 
 **Discord package installeren**
-
 Voordat we beginnen moeten de Discord package voor python installeren met het command:
 
-#### Linux/macOS
 
+#### Linux/macOS
 python3 -m pip install -U discord.py
 
-#### Windows
 
+#### Windows
 py -3 -m pip install -U discord.py
 
-**Registreren**
 
+**Registreren**
 Om te beginnen moeten we naar het Discord&#39;s Developer Portal. Voor toegang heb je een al bestaand Discord account nodig of moet je er één aanmaken.
 
 [https://discord.com/developers/docs/intro](https://discord.com/developers/docs/intro)
@@ -70,17 +67,17 @@ Top, we hebben nu een applicatie aangemaakt. Alleen wilt dat nog niet zeggen dat
 
 Ga na het tabje &#39;Bot&#39; en klik op &#39;Add Bot&#39;.
 
-![](RackMultipart20210326-4-rt3o89_html_a5357bc81b8109d0.png)
+![image2](https://user-images.githubusercontent.com/65659487/112617628-7e5eac80-8e25-11eb-93fa-0661cf28569c.png)
 
 Zodra je hebt bevestigd dat je de bot aan je applicatie wilt toevoegen, zie je de nieuwe bot-gebruiker in het portaal.
 
 De bot neemt vanzelf de naam aan die je aan de applicatie hebt gegeven. Dit kan je makkelijk veranderen door de username van de bot te veranderen.
 
-**Deelname aan server**
 
+**Deelname aan server**
 Een bot kan geen uitnodigingen accepteren zoals een normale gebruiker dat wel kan. In plaats daarvan voeg je je bot toe met behulp van het OAuth2-protocol.
 
-![](RackMultipart20210326-4-rt3o89_html_da336689a6cfcff7.png)
+![image3](https://user-images.githubusercontent.com/65659487/112617659-87e81480-8e25-11eb-916f-9675c99f0597.png)
 
 Ga naar de OAuth2 pagina. Op deze pagina zie je de OAuth2 URL generator.
 
@@ -88,7 +85,7 @@ Deze generator maakt een autorisatie-link aan voor het activeren en deactiveren 
 
 In dit geval wil je de botgebruiker toegang verlenen tot Discord API&#39;s met behulp van de OAuth2-credentials. Om dit te doen scroll je naar beneden en selecteer je &#39;bot&#39; onder de &#39;SCOPES&#39; opties en &#39;Administrator&#39; onder de &#39;BOT PERMISSIONS&#39; opties.
 
-![](RackMultipart20210326-4-rt3o89_html_d81a20488d51bb65.png)
+![image4](https://user-images.githubusercontent.com/65659487/112617680-8f0f2280-8e25-11eb-9fb4-a0478005b831.png)
 
 Nu heeft Discord de autorisatie-URL van je app gegenereerd met de geselecteerde machtigingen.
 
@@ -96,8 +93,8 @@ Selecteer &#39;Copy&#39; naast de URL die voor je is gegenereerd, plak deze in j
 
 Open de Discord applicatie en je zult zien dat de bot heeft deelgenomen aan je server.
 
-**Verbinding maken met Discord**
 
+**Verbinding maken met Discord**
 Er zal in dit verslag niet te diep ingegaan worden op de programmeertaal Python zelf meer eerder op de geschreven functies: wat ze doen en hoe ze te gebruiken etc.
 
 Nu dat de bot zich bevindt in de gewenste server moeten we de bot &#39;online&#39; krijgen. Met discord.py doe je dit door een instantie van Client in een text-editor te maken:
@@ -120,16 +117,16 @@ Je moet &#39;TOKEN&#39; vervangen door jouw bot-token. Die kan je krijgen door t
 
 Houd je token privé. Wanneer anderen toegang tot de token krijgen zullen zij de mogelijkheid hebben om andere scripts te koppelen aan je bot. Mocht dit gebeuren kan je een nieuwe maken door op Regenerate te klikken. Dit zal de oude token ongeldig maken.
 
-![](RackMultipart20210326-4-rt3o89_html_64a4513c50b58b22.png)
-
+![image5](https://user-images.githubusercontent.com/65659487/112617696-946c6d00-8e25-11eb-9548-2111fc01c638.png)
+ 
 Nu heb je een Client aangemaakt en een on\_ready () event geïmplementeerd. Dit event zal een melding in de console-log geven wanneer de Client een verbinding tot stand heeft gebracht met Discord en het klaar is met het voorbereiden van de gegevens die Discord heeft verzonden, zoals inlogstatus, gilde en kanaal data en meer.
 
 Sla de het tekstbestand op als &#39;bot.py&#39;. Open het bestand met Python of een ander programma waarmee je Python taal kunt draaien.
 
 Open Discord, je zult zien dat de bot nu online is!
 
-**Discord Bot interactie met externe programma&#39;s**
 
+**Discord Bot interactie met externe programma&#39;s**
 Voor de interactie met andere programma&#39;s gebruiken we Open Sound Control. Om met OSC te werken in Python, moet je eerst via pip een library installeren:
 
 $ pip install python-osc
@@ -188,7 +185,6 @@ Veel plezier met OSC en Discord ;)
 
 
 #### Bronnen:
-
 Lucas (2020.) _Python: Making a Discord Bot (Rewrite / v1.x)_
 
 Geraadpleegd van:
