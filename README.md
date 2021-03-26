@@ -106,19 +106,19 @@ Open de Discord applicatie en je zult zien dat de bot heeft deelgenomen aan je s
 Er zal in dit verslag niet te diep ingegaan worden op de programmeertaal Python zelf meer eerder op de geschreven functies: wat ze doen en hoe ze te gebruiken etc.
 
 Nu dat de bot zich bevindt in de gewenste server moeten we de bot &#39;online&#39; krijgen. Met discord.py doe je dit door een instantie van Client in een text-editor te maken:
-`
-import discord
 
-from discord.ext import commands
+`import discord`
 
-client = discord.Bot(command\_prefix - &#39;.&#39;)
+`from discord.ext import commands`
 
-@client.event async def on\_ready():
+`client = discord.Bot(command\_prefix - &#39;.&#39;)`
 
-print(&#39;Bot is ready.&#39;&#39;)
+`@client.event async def on\_ready():`
 
-client.run(TOKEN)
-`
+`print(&#39;Bot is ready.&#39;&#39;)`
+
+`client.run(TOKEN)`
+
 We hebben nog één ding nodig voordat we het bestand opslaan.
 
 Je moet &#39;TOKEN&#39; vervangen door jouw bot-token. Die kan je krijgen door terug te gaan naar de Bot-pagina op de Developer Portal en op Copy te klikken onder de TOKEN-sectie.
@@ -137,59 +137,51 @@ Open Discord, je zult zien dat de bot nu online is!
 **Discord Bot interactie met externe programma&#39;s**
 
 Voor de interactie met andere programma&#39;s gebruiken we Open Sound Control. Om met OSC te werken in Python, moet je eerst via pip een library installeren:
-`
-$ pip install python-osc
-`
+
+`$ pip install python-osc`
+
 Bovenaan in ons bot.py bestand importeren we deze library:
-`
-from pythonosc import udp\_client
-`
+
+`from pythonosc import udp\_client`
+
 Vervolgens geven we deze client een aantal initialisatie waardes. Deze kunnen aangepast worden wanneer je bot.py aanroept in de terminal, door middel van &#39;--port&#39; of &#39;--ip&#39;.
-`
-parser = argparse.ArgumentParser()
 
-parser.add\_argument(&quot;--ip&quot;, default=&quot;127.0.0.1&quot;,
+`parser = argparse.ArgumentParser()`
 
-help=&quot;The ip of the OSC server&quot;)
+`parser.add\_argument(&quot;--ip&quot;, default=&quot;127.0.0.1&quot;,`
 
-parser.add\_argument(&quot;--port&quot;, type=int, default=5005,
+`help=&quot;The ip of the OSC server&quot;)`
 
-help=&quot;The port the OSC server is listening on&quot;)
+`parser.add\_argument(&quot;--port&quot;, type=int, default=5005,`
 
-args = parser.parse\_args()
+`help=&quot;The port the OSC server is listening on&quot;)`
 
-client2 = udp\_client.SimpleUDPClient(args.ip, args.port)
-`
+`args = parser.parse\_args()`
+
+`client2 = udp\_client.SimpleUDPClient(args.ip, args.port)`
+
 Belangrijk is hier dat je de udp\_client een andere naam geeft dan de Discord client. Wij hebben gekozen voor &#39;client2&#39;.
 
 Vervolgens moeten we een functie schrijven die commands uit Discord kan lezen en vervolgens een OSC message kan sturen naar de gewenste port:
-`
-@client.command()
 
-async def rate(ctx, \*, oscMessage):
+`@client.command()`
 
-client2.send\_message(&quot;/rate&quot;, oscMessage)
+`async def rate(ctx, \*, oscMessage):`
 
-await ctx.send(oscMessage)
-`
+`client2.send\_message(&quot;/rate&quot;, oscMessage)`
+
+`await ctx.send(oscMessage)`
+
 Bij het bovenstaande voorbeeld zie je dat we eerst de Discord client laten weten dat we bezig zijn met een command. Vervolgens definiëren we de functie, we noemen hem in dit geval rate. We geven haar wat argumenten, en sturen het _&#39;oscMessage&#39;_ argument direct via OSC door naar port 5005 en dan specifiek naar &#39;/rate&#39;.
 
 &#39;await&#39; stuurt diezelfde _&#39;oscMessage&#39;_ ook weer terug naar de gebruiker, zodat die enige feedback krijgt dat zijn opdracht aankomt. Vervolgens kun je de bot weer runnen:
 
-python bot.py
+`python bot.py`
 
 Je kunt nu elk programma dat OSC kan ontvangen aansturen door middel van Discord commands. Wij hebben ervoor gekozen dit te doen in SuperCollider:
-`
-OSCdef(\rateOSC, {
 
-arg msg, time, addr, port;
+`OSCdef(\rateOSC, {arg msg, time, addr, port;``~def.set(\rate, msg[1].asFloat); msg[1].postln; }, &#39;/rate&#39;, recvPort:5005);`
 
-~def.set(\rate, msg[1].asFloat);
-
-msg[1].postln;
-
-}, &#39;/rate&#39;, recvPort:5005);
-`
 Veel plezier met OSC en Discord ;)
 
 
