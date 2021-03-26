@@ -62,7 +62,7 @@ Om te beginnen moeten we naar het Discord&#39;s Developer Portal. Voor toegang h
 
 Ga naar de application tab en maak een nieuwe applicatie aan.
 
-![Alt text](/images/image1.jpg?raw=true "Applicatie aanmaken")
+![image1](https://user-images.githubusercontent.com/65659487/112617538-62f3a180-8e25-11eb-9662-37d027189fa1.png)
 
 Voer een naam in en je zal gebracht worden naar de tab &#39;General information&#39;.
 
